@@ -1,0 +1,14 @@
+name: LushMenu
+version: '1.0-SNAPSHOT'
+main: antoine.vivelesfrites.lushMenu.LushMenu
+api-version: '1.20'
+prefix: LushMenu
+load: STARTUP
+authors: [ antoine/vivelesfrites ]
+description: Un menu pour la gestion du tp :)
+website: mc.lushcraft.fr
+
+commands:
+  rtp:
+    permission: lushmenu.rtp
+    description: Commande de rtp
