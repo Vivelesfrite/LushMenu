@@ -10,5 +10,10 @@ website: mc.lushcraft.fr
 
 commands:
   rtp:
+    aliase:
+      - Mondes
+    usage: /rtp
     permission: lushmenu.rtp
     description: Commande de rtp
+    permission-message: Pas encore disponible :/
+
