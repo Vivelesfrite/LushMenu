@@ -15,32 +15,40 @@ public class MondeMenu implements Listener {
     public void openMenu(Player player) {
         Inventory menu = Bukkit.createInventory(null, 27, "Mondes");
 
-        ItemStack dirt = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
-        ItemMeta dirtMeta = dirt.getItemMeta();
-        if (dirtMeta != null) {
-            dirtMeta.setDisplayName(" ");
-            dirt.setItemMeta(dirtMeta);
+        ItemStack fill = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
+        ItemMeta fillMeta = fill.getItemMeta();
+        if (fillMeta != null) {
+            fillMeta.setDisplayName(" ");
+            fill.setItemMeta(fillMeta);
         }
 
         for (int i = 0; i < 27; i++) {
-            menu.setItem(i, dirt);
+            menu.setItem(i, fill);
         }
 
         ItemStack ironPickaxe = new ItemStack(Material.IRON_PICKAXE);
         ItemMeta pickaxeMeta = ironPickaxe.getItemMeta();
         if (pickaxeMeta != null) {
-            pickaxeMeta.setDisplayName("§6Minage");
+            pickaxeMeta.setDisplayName("§6Monde Ressource 🪓");
             ironPickaxe.setItemMeta(pickaxeMeta);
         }
-        menu.setItem(12, ironPickaxe);
+        menu.setItem(14, ironPickaxe);
 
         ItemStack grassBlock = new ItemStack(Material.GRASS_BLOCK);
         ItemMeta grassMeta = grassBlock.getItemMeta();
         if (grassMeta != null) {
-            grassMeta.setDisplayName("§aMonde Normal");
+            grassMeta.setDisplayName("§6Monde Normal \uD83C\uDF32");
             grassBlock.setItemMeta(grassMeta);
         }
-        menu.setItem(14, grassBlock);
+        menu.setItem(12, grassBlock);
+
+        ItemStack leaveBlock = new ItemStack(Material.RED_STAINED_GLASS_PANE);
+        ItemMeta leaveMeta = leaveBlock.getItemMeta();
+        if (leaveMeta != null) {
+            leaveMeta.setDisplayName("§cFermé");
+            leaveBlock.setItemMeta(leaveMeta);
+        }
+        menu.setItem(26, leaveBlock);
 
 
         player.openInventory(menu);
@@ -72,7 +80,10 @@ public class MondeMenu implements Listener {
                         "betterrtp:rtp player " + player.getName() + " world"
                 );
             }
-        player.closeInventory();
+            if (clickedItem.getType() == Material.RED_STAINED_GLASS_PANE) {
+                player.closeInventory();
+            }
+        //player.closeInventory();
         }
     }
 }

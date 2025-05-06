@@ -19,7 +19,7 @@ public class BossbarRessource {
         Bukkit.getScheduler().runTaskTimer(plugin, () -> {
             for (Player player : Bukkit.getOnlinePlayers()) {
                 World world = player.getWorld();
-                if (world.getName().equalsIgnoreCase("ressource")) {
+                if (world.getName().equalsIgnoreCase("ressource") || world.getName().equalsIgnoreCase("ressource_nether")) {
                     player.sendActionBar(Component.text("🪓 Vous êtes dans le monde ressource !", NamedTextColor.RED));
                 } else {
                     player.sendActionBar(Component.empty());
